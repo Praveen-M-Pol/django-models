@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if latest_resorts %}
+        <ul>
+            {% for resort in latest_resorts %}
+            <li><a href='/resorts/{{resort.id}}'><b>{{resort.Resort_name_text}}</b></a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>don't have any resorts please add some</p>
+    {% endif %}
+
+
+</body>
+</html>

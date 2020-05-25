@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Resort name:
+    <font style="color:red"> {{resort.Resort_name_text}}</font>
+
+    </h1>
+
+    <!--<form action="resorts/resortreview/" method="post">
+        {% csrf_token %}
+        {% for resortreview in resort.resortreview_set.all %}
+        <input type="text" name="resortreview" id="resortreview{{forloop.counter}}">
+        <label for="dish{{forloop.counter}}">{{dish.Dish_name_text}}</label>
+        <input type="submit" value="Add Review">
+        {% endfor %}
+    </form>-->
+    <h1>Available dishes in {{resort.Resort_name_text}}</h1>
+    <ul>
+        {% for dish in resort.dish_set.all %}
+        <li>{{dish.Dish_name_text}}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Review for resort {{resort.Resort_name_text}}</h1>
+    <ul>
+        {% for resortreview in resort.resortreview_set.all %}
+        <li>{{resortreview.Resort_review_text}}</li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>

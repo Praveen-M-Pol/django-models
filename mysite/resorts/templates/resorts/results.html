@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Review for resort {{resort.Resort_name_text}}</h1>
+
+    <ul>
+        {% for resortreview in resort.resortreview_set.all %}
+        <li>{{resortreview.Resort_review_text}}</li>
+        {% endfor %}
+    </ul>
+
+    <a href='/resorts/detail/{{resort.id}}'>Give review again</a>
+
+</body>
+</html>
